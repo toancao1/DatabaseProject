@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+	<title>Contact Us</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="CSS/index.css">
+	<link rel="stylesheet" href="CSS/navbar.css">
+	<link rel="stylesheet" href="CSS/projectreport.css">
+	<link rel="stylesheet" href="CSS/report.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="JavaScript/contact.js"></script>
+	<script>
+		function showImage(str) {
+			// Check if person is selected.
+			// If no person is selected (str == ""), clear the content of txtHint and exit the function.
+			if (str.length == 0) {
+				document.getElementById("txtHint").innerHTML = "";
+				return;
+			} else {
+				// If a person is selected, do the following:
+				//Create an XMLHttpRequest object
+				xmlhttp = new XMLHttpRequest();
+
+				//Create the function to be executed when the server response is ready
+				xmlhttp.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("txtHint").innerHTML = this.responseText;
+					}
+				};
+
+				// Send the request off to a PHP file (getuser.php) on the server
+				// Notice that q parameter is added to the url (gethint.php?q="+str)
+				// And the str variable holds the content of the input field
+				xmlhttp.open("GET", "get_image.php?q=" + str, true);
+				xmlhttp.send();
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+	<h1 style="text-align: center;">Welcome to the Future Foods website</h1>
+	</div>
+	<div class="navigationbar">
+		<a href="index.html">Home</a>
+		<a href="menu.html">Menu</a>
+		<div class="dropdown">
+			<button class="dropbtn">Project Report
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="projectreport.html">Project Description</a>
+				<a href="entities_attributes.html">Entities and Attributes</a>
+				<a href="ER_EERmodel.html">ER and EER model</a>
+				<a href="physicaldesign_steps.html">Physical Design and Steps</a>
+				<a href="normalizedtables_websiteskeleton.html">Normalized Tables and Website Skeleton</a>
+				<a href="groupcontributions.html">Group Member Contributions</a>
+				<a href="summary_conclusion.html">Summary of Experience and Conclusion</a>
+			</div>
+		</div>
+		<a href="restaurant.html">Restaurant</a>
+		<a class="active" href="contact.html">Contact Us</a>
+		<div class="login-container">
+			<a href="register.php">Register</a>
+			<a href="login.php">Login</a>
+		</div>
+	</div>
+	<h1>Contact Information</h1>
+	<p>We are a food delivery service.</p>
+	<p id="p1">Please use the form below to contact us with any questions, comments, or concerns: </p>
+	<form>
+		<!-- Customer feedback form -->
+		<label for="fname"></i>First Name: </label><br>
+		<input type="text" id="fname" name="fname"><br><br>
+		<label for="lname">Last Name:</label><br>
+		<input type="text" id="lname" name="lname"><br><br>
+		<label for="email"></i>Email:</label><br>
+		<input type="text" id="email" name="email"><br><br>
+		<label for="address"><i class="fa fa-address-book"></i>Address: </label><br>
+		<input type="text" id="address" name="address"><br><br>
+		<textarea rows="10" cols="40"
+			name="feedbackform">Enter any questions, comments, or concerns here.</textarea><br><br>
+		<p><b>Start by typing an image name in the input field below:</b></p>
+		<form>
+			Image name: <input type="text" onkeyup="showImage(this.value)">
+		</form>
+		<p>Results: <span id="txtHint"></span></p>
+		<input type="submit" name="submit"><br>
+	</form>
+</body>
+
+<footer>
+	<br />
+	&copy; 2020 Future Foods. | &copy; All Rights Reserved.
+	<hr>
+</footer>
+
+</html>

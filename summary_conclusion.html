@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+	<title>Menu</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="CSS/index.css">
+	<link rel="stylesheet" href="CSS/navbar.css">
+	<link rel="stylesheet" href="CSS/projectreport.css">
+	<link rel="stylesheet" href="CSS/report.css">
+	<script src="JavaScript/projectreport.js"></script>
+</head>
+
+<body>
+	<h1 style="text-align: center;">Welcome to the Future Foods website</h1>
+	</div>
+	<div class="navigationbar">
+		<a href="index.html">Home</a>
+		<a href="menu.html">Menu</a>
+		<div class="active dropdown">
+			<button class="dropbtn">Project Report
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="projectreport.html">Project Description</a>
+				<a href="entities_attributes.html">Entities and Attributes</a>
+				<a href="ER_EERmodel.html">ER and EER model</a>
+				<a href="physicaldesign_steps.html">Physical Design and Steps</a>
+				<a href="normalizedtables_websiteskeleton.html">Normalized Tables and Website Skeleton</a>
+				<a href="groupcontributions.html">Group Member Contributions</a>
+				<a href="summary_conclusion.html">Summary of Experience and Conclusion</a>
+			</div>
+		</div>
+		<a href="restaurant.html">Restaurant</a>
+		<a href="contact.html">Contact Us</a>
+		<div class="login-container">
+			<a href="register.php">Register</a>
+			<a href="login.php">Login</a>
+		</div>
+	</div>
+	<h3 id="Summary">Summary of Experience</h3>
+	<p style="text-indent: 50px" id="SummaryParagraph">For this group project, we used PhpMyAdmin and Notepad++ or other
+		software to create a database for our website. Some problems we faced are making sure the PHP scripts are
+		connected and working well with the website. An example is the login page is working but the register page is
+		not adding a new user or displaying the correct permissions. The image handling is displaying the data correctly
+		in the database. In future projects, we could ask for help if we are stuck to avoid any problems and
+		double-check the php scripts as well as phpMyAdmin to make sure the tables match. </p>
+	<h3 id="Conclusion">Conclusion</h3>
+	<p id="ConclusionParagraph">Our group has decided to do a project on a food delivery service database. Each customer
+		will receive a unique id that matches a specific product number. Once a customer places an order for a product,
+		it will be stored in the database connecting to the restaurant. We want to maximize efficiency and ensure smooth
+		delivery for food to our customers. Edits were made to the EER and physical database for part 3 and 4. We
+		updated our website to include different permissions as an administrator, registered user, etc. We also included
+		multimedia and different operations like update and delete data in the tables.</p>
+	<br>
+	<input type="button" value="Back" class="button" onclick="returnToPrevious()">
+</body>
+
+<footer>
+	<br />
+	&copy; 2020 Future Foods. | &copy; All Rights Reserved.
+	<hr>
+</footer>
+
+</html>
